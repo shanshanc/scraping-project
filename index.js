@@ -16,24 +16,35 @@ const urlProduct1 = 'https://enhancedecommerce.appspot.com/item/9bdd2';
 //   });
 
 // Get product id
-let productId = {};
+// let productId = {};
+
+// nightmare
+//   .goto(urlProduct1)
+//   .wait(3000)
+//   .url()
+//   .end()
+//   .then(res => {
+//     let beginStr = res.indexOf('item/') + 5;
+//     let endStr = res.length;
+//     let id = res.slice(beginStr, endStr);
+//     productId[id] = id;
+//     console.log(productId);
+//   })
+//   .catch(err => {
+//     console.log('failed: ', err);
+//   });
+
+// Get product title, description, and price
+let productInfo = {};
 
 nightmare
   .goto(urlProduct1)
-  .wait(3000)
-  .url()
+  .wait(1000)
+  .evaluate(() => document.querySelector(".productCard").innerText)
+  //.evaluate(() => document.body.innerHTML)
   .end()
-  .then(res => {
-    let beginStr = res.indexOf('item/') + 5;
-    let endStr = res.length;
-    let id = res.slice(beginStr, endStr);
-    productId[id] = id;
-    console.log(productId);
-  })
+  .then(console.log)
   .catch(err => {
     console.log('failed: ', err);
   });
-
-// Get product title, description, and price
-
 
