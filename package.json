@@ -1,0 +1,18 @@
+{
+  "name": "scraping-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3-dsv": "^1.1.1",
+    "nightmare": "^3.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.3"
+  }
+}
