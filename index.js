@@ -4,6 +4,22 @@ const nightmare = Nightmare({ show: true }); // Pass { show: true } to the night
 const urlHomepage = 'https://enhancedecommerce.appspot.com/';
 const urlProduct1 = 'https://enhancedecommerce.appspot.com/item/9bdd2';
 
+// Get a list of products from the all t-shirts page
+nightmare
+  .goto(urlHomepage)
+  .wait(1000)
+  .evaluate(() => {
+    console.log('elements');
+    let elements = document.querySelectorAll('.thumbnail > a');
+    return elements;
+  })
+  .end()
+  .then()
+  .catch(err => {
+    console.log('failed: ', err);
+  });
+
+
 // Click to a product page from the homepage
 // nightmare
 //   .goto(urlHomepage)
@@ -35,16 +51,16 @@ const urlProduct1 = 'https://enhancedecommerce.appspot.com/item/9bdd2';
 //   });
 
 // Get product title, description, and price
-let productInfo = {};
+// let productInfo = {};
 
-nightmare
-  .goto(urlProduct1)
-  .wait(1000)
-  .evaluate(() => document.querySelector(".productCard").innerText)
-  //.evaluate(() => document.body.innerHTML)
-  .end()
-  .then(console.log)
-  .catch(err => {
-    console.log('failed: ', err);
-  });
+// nightmare
+//   .goto(urlProduct1)
+//   .wait(1000)
+//   .evaluate(() => document.querySelector(".productCard").innerText)
+//   //.evaluate(() => document.body.innerHTML)
+//   .end()
+//   .then(console.log)
+//   .catch(err => {
+//     console.log('failed: ', err);
+//   });
 
