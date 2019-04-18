@@ -29,3 +29,4 @@ node_modules
 # Custom
 assets
 tests
+server/output

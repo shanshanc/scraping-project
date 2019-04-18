@@ -9,10 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gapi-client": "0.0.3",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-cors": "0.0.16",
     "koa-router": "^7.4.0",
-    "mongoose": "^5.5.2"
+    "mongoose": "^5.5.2",
+    "mongoose-to-csv": "^0.1.1"
   }
 }

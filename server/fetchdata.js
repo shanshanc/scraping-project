@@ -54,10 +54,10 @@ vo(getLinks)((err, result) => {
       .end()
       .then(data => {
         let splitted = data.split('\n');
-        let name = splitted[0];
+        let title = splitted[0];
         let price = splitted[1].slice(-5) + ' USD';
         let description = splitted[2];
-        let product = {sku: sku, link: url, name: name, price: price, description: description};
+        let product = {offerId: sku, link: url, title: title, price: price, description: description};
         proudctObj[sku] = product;
         console.log(proudctObj); // eslint-disable-line
       })
