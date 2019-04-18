@@ -22,6 +22,9 @@ const getLinks = function * () {
         links.push(elem); 
       }
       return links;
+      // return Promise.all(links.map(link => Nightmare().goto(link).evaluate(() => {
+      //   docu,ent.
+      // })));
     });
   
   yield nightmare.end();
@@ -54,7 +57,7 @@ vo(getLinks)((err, result) => {
         let name = splitted[0];
         let price = parseFloat(splitted[1].slice(-5));
         let description = splitted[2];
-        let product = {sku: sku, url: url, name: name, price: price, description: description};
+        let product = {sku: sku, link: url, name: name, price: price, description: description};
         proudctObj[sku] = product;
         console.log(proudctObj); // eslint-disable-line
       })

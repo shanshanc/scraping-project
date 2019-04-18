@@ -1,3 +1,4 @@
+const { Product } = require('./model');
 
 exports.getProductFeed = async (ctx) => {
   try {
