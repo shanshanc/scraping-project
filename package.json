@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "./node_modules/.bin/eslint server/"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "async": "^2.6.2",
     "d3-dsv": "^1.1.1",
     "jquery": "^3.4.0",
+    "koa-router": "^8.0.0-alpha.1",
     "nightmare": "^3.0.1",
     "vo": "^4.0.2"
   },

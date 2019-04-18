@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost/productdb';
+const url = 'mongodb://localhost/products';
 
 mongoose.connect(url, { useNewUrlParser: true }, err => {
   if (err) throw new Error(err);

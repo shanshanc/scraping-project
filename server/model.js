@@ -5,8 +5,11 @@ const productSchema = new mongoose.Schema({
   name: String,
   link: String,
   image_link: String,
-  price: String,
   description: String,
+  price: {
+    value: {type: String},
+    currency: {type: String, default: 'USD'}
+  },
 
   availability: {type: String, default: 'in stock'},
   brand: {type: String, default: 'Codeworks'},
@@ -18,6 +21,6 @@ const productSchema = new mongoose.Schema({
   size: {type: String, default: 'M'}
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Products', productSchema);
 
 module.exports = Product;
