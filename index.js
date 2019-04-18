@@ -6,7 +6,6 @@ const async = require('async');
 const urlHomepage = 'https://enhancedecommerce.appspot.com/';
 const urlProduct1 = 'https://enhancedecommerce.appspot.com/item/9bdd2';
 let urlProducts = [];
-// let obj = {};
 
 // Get product links from the homepage
 const getLinks = function * () {
@@ -41,7 +40,7 @@ vo(getLinks)((err, result) => {
     // get product id from url
     const beginStr = url.indexOf('item/') + 5;
     const endStr = url.length;
-    const id = url.slice(beginStr, endStr);
+    const sku = url.slice(beginStr, endStr);
 
     nightmare
       .goto(url)
@@ -55,71 +54,17 @@ vo(getLinks)((err, result) => {
         let name = splitted[0];
         let price = parseFloat(splitted[1].slice(-5));
         let description = splitted[2];
-        let product = {id: id, url: url, name: name, price: price, description: description};
-        // console.log('product: ', product);
-        proudctObj[id] = product;
-        // console.log('name: ', name, 'price: ', price, 'desc: ', description);
-        console.log(proudctObj);
+        let product = {sku: sku, url: url, name: name, price: price, description: description};
+        proudctObj[sku] = product;
+        console.log(proudctObj); // eslint-disable-line
       })
       .catch(err => {
-        console.log('failed: ', err);
+        console.log('failed: ', err); // eslint-disable-line
     });
-
-    
   }
 
   async.each(urlProducts, getProductData, function (err) {
-    if (err) console.log('Error: ', err);
-    console.log('done');
-    // console.log(proudctObj);
+    if (err) console.log('Error: ', err); // eslint-disable-line
+    console.log('done'); // eslint-disable-line
   });
-
 });
-
-
-
-// Click to a product page from the homepage
-// nightmare
-//   .goto(urlHomepage)
-//   .click('#homepage-9bdd2-1')
-//   .wait(2000)
-//   .evaluate(() => document.querySelector(".productCard").innerText)
-//   .end()
-//   .then(console.log)
-//   .catch(err => {
-//     console.log('failed: ', err);
-//   });
-
-// Get product id
-// let productId = {};
-
-// nightmare
-//   .goto(urlProduct1)
-//   .wait(3000)
-//   .url()
-//   .end()
-//   .then(res => {
-//     let beginStr = res.indexOf('item/') + 5;
-//     let endStr = res.length;
-//     let id = res.slice(beginStr, endStr);
-//     productId[id] = id;
-//     console.log(productId);
-//   })
-//   .catch(err => {
-//     console.log('failed: ', err);
-//   });
-
-// Get product title, description, and price
-// let productInfo = {};
-
-// nightmare
-//   .goto(urlProduct1)
-//   .wait(1000)
-//   .evaluate(() => document.querySelector(".productCard").innerText)
-//   //.evaluate(() => document.body.innerHTML)
-//   .end()
-//   .then(console.log)
-//   .catch(err => {
-//     console.log('failed: ', err);
-//   });
-
