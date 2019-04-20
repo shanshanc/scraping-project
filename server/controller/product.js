@@ -5,7 +5,7 @@ const fs = require('fs');
 
 exports.getProductFeed = async (ctx) => {
   try {
-    ctx.response.body = await Product.find({});
+    ctx.response.body = await Product.find({}).where('productId').ne(null); // find productId not null
     ctx.status = 200;
   } catch (err) {
     console.log(err); // eslint-disable-line
