@@ -1,8 +1,12 @@
 <div>
-  <button (click)="getStatus();">get status</button>
+  <button (click)="getStatus();" class="md-button">Get Status</button>
 </div>
 <div *ngIf="feeds">
   <div *ngFor="let feed of feeds">
     <p>{{feed.name}}</p>
+    <span>{{feed.sku}}</span>
+    <span>{{feed.price.value}}</span>
+    <span>{{feed.link}}</span>
+    <span>{{feed.description}}</span>
   </div>
 </div>

@@ -1,0 +1,18 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+}
+/* Row Gap */
+.cardList > *:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.cardInner {
+  display: grid;
+  grid-template-areas: "header header" "side content" "footer footer";
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
