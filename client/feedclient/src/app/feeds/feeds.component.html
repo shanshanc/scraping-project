@@ -1,7 +1,41 @@
 <div>
-  <button mat-raised-button color="primary" (click)="getStatus()" >Get Status</button>
+  <button mat-raised-button color="primary" (click)="getStatus()">Preview Latest</button>
 </div>
 <div *ngIf="feeds">
+    <table *ngIf="feeds" mat-table [dataSource]="feeds" class="mat-elevation-z8 small-font">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+      
+        <!-- Product ID Column -->
+        <ng-container matColumnDef="productId">
+          <th mat-header-cell *matHeaderCellDef> Product ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
+        </ng-container>
+      
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+      
+        <!-- Brand Column -->
+        <ng-container matColumnDef="brand">
+          <th mat-header-cell *matHeaderCellDef> Brand </th>
+          <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+      </table>
+</div>
+
+<!-- <div *ngIf="feeds">
   <div *ngFor="let feed of feeds">
     <p>{{feed.title}}</p>
     <span>{{feed.productId}}</span>
@@ -10,4 +44,4 @@
     <span>{{feed.description}}</span>
     <span>{{feed.image_link}}</span>
   </div>
-</div>
+</div> -->

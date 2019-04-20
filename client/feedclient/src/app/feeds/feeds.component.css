@@ -1,13 +1,15 @@
-.md-button {
-  padding: 0 6px 0 6px;
-  margin: 6px 8px 6px 8px;
-  min-width: 88px;
-  border-radius: 3px;
-  font-size: 1.2rem;
-  background-color: #C0C0C0;
-  text-align: center;
-  /* text-transform: uppercase; */
-  text-decoration:none;
-  border: none;
-  outline: none;
+.small-font {
+  font-size: 0.6rem;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  overflow: hidden;
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

@@ -8,25 +8,33 @@
     <mat-toolbar>
       <h1>Feeeed it up</h1>
     </mat-toolbar>
+    <div
+      fxLayout="row"
+      fxLayout.lt-sm="column" 
+      fxLayoutGap="32px" 
+      fxLayoutAlign="flex-start"
+    >
+      <div fxFlex="0 1 100%" class="dev"><app-history></app-history></div>
+      <div fxFlex="0 1 100%" class="dev"><app-feeds></app-feeds></div>
+    </div>
     
-    <app-feeds></app-feeds>
-    <div 
+    <!-- <div 
       fxLayout="row wrap"
       fxLayout.lt-sm="column" 
       fxLayoutGap="32px" 
       fxLayoutAlign="flex-start">
-      <ng-container *ngFor="let _ of [1,2,3,4,5,6]">
         <app-card 
-          fxFlex="0 1 calc(33.3% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
+          fxFlex="0 1 calc(50% - 32px)"
           fxFlex.lt-sm="100%"
         >
-          
-        
         </app-card>
-      </ng-container>
-        
-     </div>
+
+        <app-card 
+          fxFlex="0 1 calc(50% - 32px)"
+          fxFlex.lt-sm="100%"
+        >
+        </app-card>
+     </div> -->
   </body>
 </html>
 

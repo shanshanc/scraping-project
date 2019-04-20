@@ -1,0 +1,6 @@
+<div *ngIf="records">
+    <div *ngFor="let record of records"> History
+      <div>Date: {{ record.id | date: 'medium' }}</div>
+      <div>Number of Products: {{ record.number_of_items}}</div>
+    </div>
+  </div>

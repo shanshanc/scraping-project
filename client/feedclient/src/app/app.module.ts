@@ -3,17 +3,19 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatTableModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { CardComponent } from './card/card.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedsComponent,
-    CardComponent
+    CardComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { CardComponent } from './card/card.component';
     FlexLayoutModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

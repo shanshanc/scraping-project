@@ -10,6 +10,7 @@ import { FeedServiceService } from '../feed-service.service';
 
 export class FeedsComponent implements OnInit {
   feeds: Feed[] = [];
+  tableColumns: string[] = ['title', 'productId', 'price', 'brand'];
   
   constructor(private feedServiceService: FeedServiceService) { }
 
@@ -17,7 +18,7 @@ export class FeedsComponent implements OnInit {
   }
 
   getStatus() {
-    console.log('clicked');
+    // console.log('clicked');
     // console.log(this.feedServiceService.getFeedStatus());
     this.feedServiceService.getFeedStatus()
       .subscribe(feeds => this.feeds = feeds);
