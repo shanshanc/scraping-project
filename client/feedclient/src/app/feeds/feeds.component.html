@@ -3,10 +3,11 @@
 </div>
 <div *ngIf="feeds">
   <div *ngFor="let feed of feeds">
-    <p>{{feed.name}}</p>
-    <span>{{feed.sku}}</span>
-    <span>{{feed.price.value}}</span>
+    <p>{{feed.title}}</p>
+    <span>{{feed.productId}}</span>
+    <span>{{feed.price}}</span>
     <span>{{feed.link}}</span>
     <span>{{feed.description}}</span>
+    <span>{{feed.image_link}}</span>
   </div>
 </div>

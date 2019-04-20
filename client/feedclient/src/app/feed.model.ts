@@ -1,12 +1,21 @@
 export class Feed {
-  price: any;
-  _id: string;
+  // price: any;
+  price: string;
+  productId: string;
   sku: string;
-  name: string;
+  title: string;
   link: string;
   image_link: string;
   description: string;
-  _v: number;
+
+  availability: string;
+  brand: string;
+  age_group: string;
+  color: string;
+  gender: string;
+  size: string;
+  _id: string;
+  __v: number;
 
   static parse(data) {
     const feed = Object.assign(new Feed(), data);

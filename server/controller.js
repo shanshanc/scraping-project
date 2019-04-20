@@ -1,4 +1,4 @@
-const Product = require('./model');
+const { Product } = require('./model');
 const { fetchProducts } = require('./fetchdata');
 const fs = require('fs');
 
@@ -16,6 +16,7 @@ exports.scrapSite = async (ctx) => {
   try {
     const fetch = fetchProducts();
     const products = await fetch;
+    console.log(products.length, Date.now());
     ctx.response.body = products;
     ctx.status = 200;
   } catch (err) {

@@ -61,7 +61,7 @@ exports.fetchProducts = () => {
             console.log('getProductsData\'s then');
             return Object.assign(data, {
               link: url,
-              id: sku
+              productId: sku
             });
           })
           .catch(err => {
