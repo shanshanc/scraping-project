@@ -1,5 +1,5 @@
 <div>
-  <button (click)="getStatus();" class="md-button">Get Status</button>
+  <button mat-raised-button color="primary" (click)="getStatus()" >Get Status</button>
 </div>
 <div *ngIf="feeds">
   <div *ngFor="let feed of feeds">

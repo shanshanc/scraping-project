@@ -1,0 +1,23 @@
+const History = require('../model/history');
+
+exports.postOneRecord = async (ctx) => {
+  try {
+    // console.log(ctx.request.body);
+    const newRecord = await History.create(ctx.request.body);
+    ctx.body = newRecord;
+    ctx.status = 200;
+  } catch (err) {
+    console.log(err); // eslint-disable-line
+    ctx.status = 500;
+  }
+};
+
+exports.getAllRecords = async (ctx) => {
+  try {
+    ctx.body = await History.find({});
+    ctx.status = 200;
+  } catch (err) {
+    console.log(err); // eslint-disable-line
+    ctx.status = 500;
+  }
+}

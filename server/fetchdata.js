@@ -74,6 +74,7 @@ exports.fetchProducts = () => {
     });
   });
 };
+
 // exports.fetchProducts = () => {
 //   return new Promise((resolve, reject) => {
 //     vo (getLinks) ((err, result) => {

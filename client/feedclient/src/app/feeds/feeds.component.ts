@@ -7,6 +7,7 @@ import { FeedServiceService } from '../feed-service.service';
   templateUrl: './feeds.component.html',
   styleUrls: ['./feeds.component.css']
 })
+
 export class FeedsComponent implements OnInit {
   feeds: Feed[] = [];
   
