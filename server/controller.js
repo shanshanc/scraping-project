@@ -1,4 +1,5 @@
 const Product = require('./model');
+const { fetchProducts } = require('./fetchdata');
 const fs = require('fs');
 
 exports.getProductFeed = async (ctx) => {
@@ -10,6 +11,18 @@ exports.getProductFeed = async (ctx) => {
     ctx.status = 500;
   }
 };
+
+exports.scrapSite = async (ctx) => {
+  try {
+    const fetch = fetchProducts();
+    const products = await fetch;
+    ctx.response.body = products;
+    ctx.status = 200;
+  } catch (err) {
+    console.log(err); // eslint-disable-line
+    ctx.status = 400;
+  }
+}
 
 exports.generateCsv = async (ctx) => {
   try { 

@@ -1,0 +1,8 @@
+<div>
+  <button (click)="getStatus();">get status</button>
+</div>
+<div *ngIf="feeds">
+  <div *ngFor="let feed of feeds">
+    <p>{{feed.name}}</p>
+  </div>
+</div>
