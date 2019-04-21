@@ -4,17 +4,38 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    
     <mat-toolbar>
-      <h1>Feeeed it up</h1>
+      <i class="material-icons md-36">home</i>
+      <h1>How It Works</h1>
+      <div class="username">
+          <i class="material-icons md-36">face</i>
+      </div>
     </mat-toolbar>
+    <hr class="hr-color">
+    <!-- <div class="hr-transparent"></div> -->
     <div
-      fxLayout="row"
+      fxLayout="column"
       fxLayout.lt-sm="column" 
       fxLayoutGap="32px" 
       fxLayoutAlign="flex-start"
-    >
-      <div fxFlex="0 1 100%" class="dev"><app-history></app-history></div>
+    > 
+      <div class="herohead">
+          <div class="image-container">
+            <p>Fetch product data from website</p>
+            <img src="../assets/website-data-color.png" class="responsive">
+          </div>
+          <i class="material-icons md-36">arrow_forward_ios</i>
+          <div class="image-container">
+            <p>Save & Sent It to Publishers</p>
+            <img src="../assets/cloud-computing.png" class="responsive">
+          </div>
+          <i class="material-icons md-36">arrow_forward_ios</i>
+          <div class="image-container">
+            <p>Show dynamic ads on Google or Facebook!</p>
+            <img src="../assets/Facebooks-Dynamic-Ad-Illustration.jpg" class="responsive">
+          </div>
+      </div>
+      <div fxFlex="0 1 100%" class="dev history"><app-history></app-history></div>
       <div fxFlex="0 1 100%" class="dev"><app-feeds></app-feeds></div>
     </div>
     

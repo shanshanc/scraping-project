@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatTableModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { FeedsComponent } from './feeds/feeds.component';
@@ -25,7 +26,8 @@ import { HistoryComponent } from './history/history.component';
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

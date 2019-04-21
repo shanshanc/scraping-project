@@ -2,3 +2,48 @@
   border: 1px solid black;
   border-radius: 8px;
 }
+
+hr.hr-color {
+  border-top: 1px dashed lightgray;
+}
+
+.herohead {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f5;
+  /* border: 1px solid red; */
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+
+.herohead img {
+  /* margin: 0 5px; */
+  /* padding: 30px; */
+  width: 50%;
+  align-self: center;
+  /* border: 1px solid black; */
+}
+
+/* .responsive {
+  width: 30%;
+} */
+
+.username {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+ /* Rules for sizing the icon. */
+ .material-icons.md-18 { font-size: 18px; }
+ .material-icons.md-24 { font-size: 24px; }
+ .material-icons.md-36 { font-size: 36px; }
+ .material-icons.md-48 { font-size: 48px; }

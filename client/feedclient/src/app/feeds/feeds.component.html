@@ -1,6 +1,7 @@
 <div>
-  <button mat-raised-button color="primary" (click)="getStatus()">Preview Latest</button>
+  <button mat-raised-button color="primary" (click)="getStatus()">Preview Latest (max 20 items)</button>
 </div>
+<hr/>
 <div *ngIf="feeds">
     <table *ngIf="feeds" mat-table [dataSource]="feeds" class="mat-elevation-z8 small-font">
         <!--- Note that these columns can be defined in any order.
