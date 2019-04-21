@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { CardComponent } from './card/card.component';
 import { HistoryComponent } from './history/history.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedsComponent,
     CardComponent,
-    HistoryComponent
+    HistoryComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,

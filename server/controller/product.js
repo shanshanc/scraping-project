@@ -22,7 +22,11 @@ exports.scrapSite = async (ctx) => {
     // add a new record to history
     const rowNum = products.length;
     const newRecord = await History.create({number_of_items: rowNum}); // eslint-disable-line
-    console.log('Added a new record to history db'); // eslint-disable-line
+    console.log('Added a new record to history collection'); // eslint-disable-line
+
+    // add products to db
+    await Product.insertMany(products, function (err, docs) {}); // eslint-disable-line
+    console.log('Added products to product collection'); // eslint-disable-line
 
     // send the fetched product data to ctx.body
     ctx.response.body = products;

@@ -4,9 +4,12 @@
     <div>Number of Products: {{ record.number_of_items}}</div>
   </div>
 </div> -->
+<div *ngIf="records">
+  <app-line-chart [records]="records"></app-line-chart>
+</div>
 
 <div *ngIf="records" class="history-box">
-  <div class="history-title"><h4>History</h4></div>
+  <div class="history-title"><h3>Previous Updates</h3></div>
   <mat-list role="list" *ngFor="let record of records">
     <mat-list-item role="listitem">
       <i class="material-icons">calendar_today</i>{{ record.id | date: 'short' }}.

@@ -1,0 +1,17 @@
+#chart {
+  height: inherit;
+  width: inherit;
+  border: 1px solid lightgray;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
