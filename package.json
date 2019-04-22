@@ -1,0 +1,23 @@
+{
+  "name": "scraping-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "./node_modules/.bin/eslint server/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.2",
+    "d3-dsv": "^1.1.1",
+    "jquery": "^3.4.0",
+    "koa-router": "^8.0.0-alpha.1",
+    "nightmare": "^3.0.1",
+    "vo": "^4.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.3"
+  }
+}

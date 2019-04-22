@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gapi-client": "0.0.3",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.5.2",
+    "mongoose-to-csv": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
