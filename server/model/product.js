@@ -2,7 +2,7 @@ const mongoose = require('../db');
 const mongooseToCsv = require('mongoose-to-csv');
 
 const productSchema = new mongoose.Schema({
-  productId: String,
+  id: String,
   title: String,
   link: String,
   price: String,

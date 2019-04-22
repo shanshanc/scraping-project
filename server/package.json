@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/storage": "^2.5.0",
+    "bcrypt": "^3.0.6",
     "gapi-client": "0.0.3",
+    "googleapis": "^39.2.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-cors": "0.0.16",
