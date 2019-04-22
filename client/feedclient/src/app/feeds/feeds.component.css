@@ -2,6 +2,15 @@
   font-size: 0.6rem;
 }
 
+.bold-font {
+  font-size: 1.1rem;
+}
+
+.feeds-box {
+  display: flex;
+  justify-content: center;
+}
+
 table {
   width: 100%;
   table-layout: fixed;

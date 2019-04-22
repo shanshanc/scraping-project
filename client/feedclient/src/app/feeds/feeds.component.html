@@ -1,33 +1,33 @@
-<div>
+<div class="feeds-box">
   <button mat-raised-button color="primary" (click)="getStatus()">Preview Latest (max 20 items)</button>
 </div>
 <hr/>
 <div *ngIf="feeds">
-    <table *ngIf="feeds" mat-table [dataSource]="feeds" class="mat-elevation-z8 small-font">
+    <table *ngIf="feeds" mat-table [dataSource]="feeds" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
       
         <!-- Title Column -->
         <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <th mat-header-cell *matHeaderCellDef class="bold-font"> Title </th>
           <td mat-cell *matCellDef="let element"> {{element.title}} </td>
         </ng-container>
       
         <!-- Product ID Column -->
         <ng-container matColumnDef="productId">
-          <th mat-header-cell *matHeaderCellDef> Product ID </th>
+          <th mat-header-cell *matHeaderCellDef class="bold-font"> Product ID </th>
           <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
         </ng-container>
       
         <!-- Price Column -->
         <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <th mat-header-cell *matHeaderCellDef class="bold-font"> Price </th>
           <td mat-cell *matCellDef="let element"> {{element.price}} </td>
         </ng-container>
       
         <!-- Brand Column -->
         <ng-container matColumnDef="brand">
-          <th mat-header-cell *matHeaderCellDef> Brand </th>
+          <th mat-header-cell *matHeaderCellDef class="bold-font"> Brand </th>
           <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
         </ng-container>
       

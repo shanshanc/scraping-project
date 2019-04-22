@@ -14,7 +14,8 @@ exports.postOneRecord = async (ctx) => {
 
 exports.getAllRecords = async (ctx) => {
   try {
-    ctx.body = await History.find({});
+    ctx.body = await History.find({})
+      .sort({id: 'asc'});
     ctx.status = 200;
   } catch (err) {
     console.log(err); // eslint-disable-line

@@ -5,7 +5,8 @@ const fs = require('fs');
 
 exports.getProductFeed = async (ctx) => {
   try {
-    ctx.response.body = await Product.find({}).where('productId').ne(null); // find productId not null
+    ctx.response.body = await Product.find({})
+      .where('productId').ne(null); // find productId not null
     ctx.status = 200;
   } catch (err) {
     console.log(err); // eslint-disable-line
@@ -25,6 +26,7 @@ exports.scrapSite = async (ctx) => {
     console.log('Added a new record to history collection'); // eslint-disable-line
 
     // add products to db
+    // deleteMany({} }, function (err) {});
     await Product.insertMany(products, function (err, docs) {}); // eslint-disable-line
     console.log('Added products to product collection'); // eslint-disable-line
 
