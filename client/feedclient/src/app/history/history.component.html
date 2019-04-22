@@ -1,0 +1,20 @@
+<!-- <div *ngIf="records">
+  <div *ngFor="let record of records"> History
+    <div>Date: {{ record.id | date: 'medium' }}</div>
+    <div>Number of Products: {{ record.number_of_items}}</div>
+  </div>
+</div> -->
+<div *ngIf="records" class="history-box">
+  <div class="history-title"><p>Prevous Updates</p></div>
+  <app-line-chart [records]="records"></app-line-chart>
+</div>
+<!-- 
+<div *ngIf="records" class="history-box">
+  <div class="history-title"><h3>Previous Updates</h3></div>
+  <mat-list role="list" *ngFor="let record of records">
+    <mat-list-item role="listitem">
+      <i class="material-icons">calendar_today</i>{{ record.id | date: 'short' }}.
+      <i class="material-icons">done</i>{{ record.number_of_items }} products in the feed.
+    </mat-list-item>
+  </mat-list>
+</div> -->

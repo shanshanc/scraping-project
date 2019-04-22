@@ -1,0 +1,4 @@
+2019-04-18 11:46:24.394 CEST [41705] LOG:  listening on IPv6 address "::1", port 5432
+2019-04-18 11:46:24.394 CEST [41705] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-04-18 11:46:24.398 CEST [41705] FATAL:  could not create lock file "/tmp/.s.PGSQL.5432.lock": Permission denied
+2019-04-18 11:46:24.399 CEST [41705] LOG:  database system is shut down
