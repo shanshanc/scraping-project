@@ -36,7 +36,7 @@ async function main() {
     headers: {
       "Content-Type": "application/json"
     },
-    // body: stringifiedObj
+    body: stringifiedObj
   })
     .then((res) => console.log(res)); 
 }

@@ -50,18 +50,19 @@ exports.fetchProducts = () => {
   
             obj.title = productCard.getElementsByClassName("col-sm-12")[0].getElementsByTagName('h2')[0].innerText;
             let price = productCard.getElementsByClassName("col-sm-12")[0].getElementsByTagName('h3')[0].innerText;
-            obj.price = price.slice(-5) + ' USD';
+            obj.price = price.slice(-5) + ' USD'; // for direct upload to google merchant center
+            // obj.price.value = price.slice(-5) // for content service api to google
             obj.description = productCard.getElementsByClassName("col-sm-12")[0].getElementsByTagName('p')[0].innerText;
-            obj.imgLink = productCard.getElementsByClassName("itemPic")[0].getElementsByTagName('img')[0].src;
+            obj.image_link = productCard.getElementsByClassName("itemPic")[0].getElementsByTagName('img')[0].src;
   
             return obj;
           })
           .end()
           .then(data => {
-            console.log('getProductsData\'s then');
+            console.log('getProductsData\'s then'); // eslint-disable-line
             return Object.assign(data, {
               link: url,
-              productId: sku
+              id: sku
             });
           })
           .catch(err => {

@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
   age_group: {type: String, default: 'adult'},
   color: {type: String, default: 'yellow'},
   gender: {type: String, default: 'unisex'},
-  size: {type: String, default: 'M'}
+  // size: {type: String, default: 'M'},
   
   // price: {
   //   value: {type: String},
@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema({
 productSchema.plugin(mongooseToCsv, {
   headers: 'offerId title link imageLink description',
   constraints: {
-    'id': 'productId',
+    'id': 'id',
     'title': 'title',
     'link': 'link',
     'image_link': 'image_link',

@@ -6,7 +6,7 @@ const fs = require('fs');
 exports.getProductFeed = async (ctx) => {
   try {
     ctx.response.body = await Product.find({})
-      .where('productId').ne(null); // find productId not null
+      .where('id').ne(null); // find productId not null
     ctx.status = 200;
   } catch (err) {
     console.log(err); // eslint-disable-line
@@ -22,12 +22,19 @@ exports.scrapSite = async (ctx) => {
 
     // add a new record to history
     const rowNum = products.length;
-    const newRecord = await History.create({number_of_items: rowNum}); // eslint-disable-line
-    console.log('Added a new record to history collection'); // eslint-disable-line
+    await History.create({number_of_items: rowNum}, function (err) {
+      if (err) console.log(err); // eslint-disable-line
+    }); 
+    console.log('Added a new record to the history collection'); // eslint-disable-line
 
-    // add products to db
-    // deleteMany({} }, function (err) {});
-    await Product.insertMany(products, function (err, docs) {}); // eslint-disable-line
+    // clear and add fetched products to collection
+    await Product.deleteMany({}, function (err) {
+      if (err) console.log(err); // eslint-disable-line
+    });
+
+    await Product.insertMany(products, function (err) {
+      if (err) console.log(err); // eslint-disable-line
+    }); 
     console.log('Added products to product collection'); // eslint-disable-line
 
     // send the fetched product data to ctx.body
