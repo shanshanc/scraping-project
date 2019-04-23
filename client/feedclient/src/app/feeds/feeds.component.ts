@@ -10,7 +10,7 @@ import { FeedServiceService } from '../feed-service.service';
 
 export class FeedsComponent implements OnInit {
   feeds: Feed[] = [];
-  tableColumns: string[] = ['title', 'productId', 'price', 'brand'];
+  tableColumns: string[] = ['index', 'title', 'productId', 'price', 'brand'];
   
   constructor(private feedServiceService: FeedServiceService) { }
 

@@ -7,7 +7,8 @@
 }
 
 .bar {
-  fill: steelblue;
+  /* fill: steelblue; */
+  fill: #f78fa4;
 }
 
 .bar:hover {
@@ -24,7 +25,9 @@
   min-width: 80px;
   height: auto;
   background: none repeat scroll 0 0 #ffffff;
-  border: 1px solid #6F257F;
+  /* border: 1px solid #6F257F; */
+  border-radius: 5px;
   padding: 14px;
   text-align: center;
+  font-size: 0.7rem;
 }

@@ -1,10 +1,9 @@
 export class Feed {
   // price: any;
-  price: string;
-  productId: string;
-  sku: string;
+  id: string;
   title: string;
   link: string;
+  price: string;
   image_link: string;
   description: string;
 
@@ -13,9 +12,9 @@ export class Feed {
   age_group: string;
   color: string;
   gender: string;
-  size: string;
-  _id: string;
-  __v: number;
+  // size: string;
+  // _id: string;
+  // __v: number;
 
   static parse(data) {
     const feed = Object.assign(new Feed(), data);
