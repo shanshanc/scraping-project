@@ -6,6 +6,7 @@ const fs = require('fs');
 exports.getProductFeed = async (ctx) => {
   try {
     ctx.response.body = await Product.find({})
+      .select('-_id -__v')
       .where('id').ne(null); // find productId not null
     ctx.status = 200;
   } catch (err) {

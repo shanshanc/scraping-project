@@ -25,13 +25,19 @@ const productSchema = new mongoose.Schema({
 });
 
 productSchema.plugin(mongooseToCsv, {
-  headers: 'offerId title link imageLink description',
+  headers: 'id title link price image_link description availability brand age_group color gender',
   constraints: {
     'id': 'id',
     'title': 'title',
     'link': 'link',
+    'price': 'price',
     'image_link': 'image_link',
-    'description': 'description'
+    'description': 'description',
+    'availability': 'availability',
+    'brand': 'brand',
+    'age_group': 'age_group',
+    'color': 'color',
+    'gender': 'gender'
   }
 });
 
