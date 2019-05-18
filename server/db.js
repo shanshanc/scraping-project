@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost/products';
+const dbUrl = process.env.DB_URL;
 
-mongoose.connect(url, { useNewUrlParser: true }, err => {
+mongoose.connect(dbUrl, { useNewUrlParser: true }, err => {
   if (err) throw new Error(err);
   else console.log('Database connected'); //eslint-disable-line
 });

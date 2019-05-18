@@ -27,6 +27,8 @@ node_modules
 .node_repl_history
 
 # Custom
+.env
 assets
 tests
 server/output
+server/private/

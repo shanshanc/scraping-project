@@ -18,8 +18,6 @@ export class FeedsComponent implements OnInit {
   }
 
   getStatus() {
-    // console.log('clicked');
-    // console.log(this.feedServiceService.getFeedStatus());
     this.feedServiceService.getFeedStatus()
       .subscribe(feeds => this.feeds = feeds);
   }

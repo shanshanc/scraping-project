@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const cors = require('koa-cors');
@@ -5,7 +6,7 @@ const router = require('./router');
 
 
 const app = new Koa();
-const port = 4100;
+const port = process.env.PORT || 4100;
 
 app
   .use(bodyParser())

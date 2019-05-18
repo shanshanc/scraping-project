@@ -22,9 +22,6 @@ const getLinks = function * () {
         links.push(elem); 
       }
       return links;
-      // return Promise.all(links.map(link => Nightmare().goto(link).evaluate(() => {
-      //   docu,ent.
-      // })));
     });
   
   yield nightmare.end();

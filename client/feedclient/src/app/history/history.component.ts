@@ -16,7 +16,6 @@ export class HistoryComponent implements OnInit {
   }
 
   retrieveHistory() {
-    // console.log(this.feedServiceService.getHistory());
     this.feedServiceService.getHistory()
     .subscribe(records => this.records = records);
   }

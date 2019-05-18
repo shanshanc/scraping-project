@@ -15,7 +15,7 @@ export class LineChartComponent implements OnChanges {
 
   @Input()
   records: Record[];
-  
+
   margin = {top: 20, right: 20, bottom: 30, left: 45};
 
   constructor() { }
@@ -39,7 +39,6 @@ export class LineChartComponent implements OnChanges {
     const maxYscale = 30;
     const xStart = Math.min.apply(null, feeddata.map(d => d.id));
     const xEnd = Math.max.apply(null, feeddata.map(d => d.id));
-    console.log('x-start: ', xStart, 'x-end:',xEnd);
 
     const yScale = d3.scaleLinear()
       .domain([0, maxYscale])
@@ -74,14 +73,7 @@ export class LineChartComponent implements OnChanges {
     g.append("g")
       .call(d3.axisLeft(vScale).ticks(null))
       .attr("transform", "translate(0, -40)");
-      // .append("text");
-      // .attr("transform", "translate(0, 365)");
-      // .attr("transform", "rotate(-90)")
-      // .attr("y", 6)
-      // .attr("dy", "0.71em")
-      // .attr("text-anchor", "middle")
-      // .text("Count");  
-
+      
     // Draw axis - x
     const hScale = d3.scaleTime()
       .domain([xStart, xEnd])
@@ -98,16 +90,14 @@ export class LineChartComponent implements OnChanges {
         .append('rect')
           .attr('class', 'bar')
           .attr('width', barWidth)
-          // .attr('width', xScale.range())
           .attr('height', function(d) {
             return yScale(d.number_of_items);
           })
           .attr('x', function(d,i) {
             return i * (barWidth + barOffset) + 2;
-            // return xScale(d.id);
           })
           .attr('y', function(d) {
-            return height - yScale(d.number_of_items) -38;
+            return height - yScale(d.number_of_items) -35;
           })
       .on('mouseover', function(d) {
         const dateTip = new Date(d.id).toLocaleDateString('en-gb', dateOptions);
@@ -116,21 +106,6 @@ export class LineChartComponent implements OnChanges {
           .style("top", d3.event.pageY - 70 + "px")
           .style("display", "inline")
           .html(d.number_of_items + " products");
-          // .html(dateTip + "<br>" + (d.number_of_items) + " products");
       });
-      // .on('mouseout', function(d) {
-      //   toolTip.transition()
-      //     .style('opacity', 0);
-          
-      //   d3.select(this).style('opacity', 1);
-      // });
-
-      // svg
-      //   .transition()
-      //   .duration(1000)
-      //   .style("background-color", "#f5f5f5");
-
-      
-    
   }
 }
